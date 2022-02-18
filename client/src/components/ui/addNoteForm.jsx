@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNote } from "../../hooks/useNote";
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 import SelectField from "../common/form/selectField";
 import TextField from "../common/form/textField";
 import { useSelector } from "react-redux";
@@ -15,7 +15,7 @@ const AddNoteForm = () => {
   const [data, setData] = useState({
     title: "",
     content: "",
-    importance: "67rdca3eeb7f6fgeed471198",
+    importance: "620f6e2069fa09774d732e52",
   });
 
   const importanceList = importances.map((p) => ({
@@ -33,13 +33,13 @@ const AddNoteForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const newData = {
-      _id: nanoid(),
+      // _id: nanoid(),
       ...data,
     };
     setData({
       title: "",
       content: "",
-      importance: "67rdca3eeb7f6fgeed471198",
+      importance: "",
     });
 
     addNote(newData);

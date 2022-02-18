@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAuthErrors, login } from "../../store/users";
 
 const LoginForm = () => {
-  // const { logIn } = useAuth();
+  const { logIn } = useAuth();
   const dispatch = useDispatch();
   const loginError = useSelector(getAuthErrors());
   const history = useHistory();
@@ -99,6 +99,7 @@ const LoginForm = () => {
       <CheckBoxField value={data.stayOn} onChange={handleChange} name="stayOn">
         Оставаться в системе
       </CheckBoxField>
+      {loginError && <p className="text-danger">{loginError}</p>}
       <button
         type="submit"
         disabled={!isValid}

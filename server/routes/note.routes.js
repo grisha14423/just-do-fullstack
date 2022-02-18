@@ -41,16 +41,19 @@ router.get("/", auth, async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const newNote = await Note.create({
       ...req.body,
-      userId: req.user._id,
+      userId: req.body.userId,
     });
+    // console.log(newNote);
 
     res.status(201).send(newNote);
   } catch (e) {
+    // console.log(e);
     res.status(500).json({
-      message: "Ошибка на сервере, попробуйте позже",
+      message: "Ошибка на сервере, попробуйте позже? note service",
     });
   }
 });

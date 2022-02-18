@@ -1,11 +1,11 @@
 import React from "react";
-import useMockData from "../utils/mockData";
+// import useMockData from "../utils/mockData";
 
 const Main = () => {
-  const { error, initialize, progress, status } = useMockData();
-  const handleClick = () => {
-    initialize();
-  };
+  // const { error, initialize, progress, status } = useMockData();
+  // const handleClick = () => {
+  //   initialize();
+  // };
   return (
     <div className="container mt-5">
       {/* <h3>Инициализация данных в FireBase</h3>

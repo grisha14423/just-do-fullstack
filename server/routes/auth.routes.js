@@ -57,7 +57,7 @@ router.post("/signUp", [
 ]);
 
 router.post("/signInWithPassword", [
-  check("email", "email incorrect").normalizeEmail().isEmail(),
+  check("email", "email incorrect").isEmail(),
   check("password", "password could not be empty").exists(),
   async (req, res) => {
     try {
@@ -75,9 +75,7 @@ router.post("/signInWithPassword", [
 
       const { email, password } = req.body;
 
-      console.log(email, password);
-
-      const existingUser = await User.findOne(email);
+      const existingUser = await User.findOne({ email });
 
       if (!existingUser) {
         return res.status(400).send({
@@ -104,6 +102,7 @@ router.post("/signInWithPassword", [
 
       res.status(200).send({ ...tokens, userId: existingUser._id });
     } catch (e) {
+      console.log(e);
       res.status(500).json({
         message: "Ошибка на сервере, попробуйте позже",
       });

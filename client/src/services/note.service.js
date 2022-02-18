@@ -8,7 +8,7 @@ const noteService = {
     return data;
   },
   createNote: async (payload) => {
-    const { data } = await httpService.put(noteEndPoint + payload._id, payload);
+    const { data } = await httpService.post(noteEndPoint, payload);
     return data;
   },
   removeNote: async (noteId) => {

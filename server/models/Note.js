@@ -4,11 +4,9 @@ const schema = new Schema(
   {
     title: {
       type: String,
-      required: true,
     },
     content: {
       type: String,
-      required: true,
     },
     importance: {
       type: Schema.Types.ObjectId,

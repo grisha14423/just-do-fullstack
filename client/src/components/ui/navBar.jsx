@@ -1,6 +1,8 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
+import { getIsLoggedIn } from "../../store/users";
 import NavProfile from "./navProfile";
 
 // enableDarkMode({
@@ -10,7 +12,8 @@ import NavProfile from "./navProfile";
 // });
 
 const Navbar = () => {
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
+  const isLoggedIn = useSelector(getIsLoggedIn());
 
   return (
     <div className="navbar bg-light">
@@ -21,14 +24,14 @@ const Navbar = () => {
               Главная
             </Link>
           </li>
-          {currentUser && (
+          {isLoggedIn && (
             <li className="nav-item mt-2">
               <Link className="nav-link" aria-current="page" to="/notes">
                 Заметки
               </Link>
             </li>
           )}
-          {currentUser ? (
+          {isLoggedIn ? (
             <NavProfile />
           ) : (
             <li className="nav-item mt-2">

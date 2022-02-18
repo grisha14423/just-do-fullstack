@@ -6,10 +6,13 @@ import AddNoteForm from "../ui/addNoteForm";
 import ImportanceList from "../ui/importanceList";
 import "../../styles/noteList.css";
 import TextField from "../common/form/textField";
+import { useSelector } from "react-redux";
+import { getCurrentUserData } from "../../store/users";
 
 const NotesListPage = () => {
   const { notes, deleteNote, isLoading } = useNote();
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
+  const currentUser = useSelector(getCurrentUserData());
   const [searchQuery, setSearchQuery] = useState("");
 
   function filterNotes(data) {

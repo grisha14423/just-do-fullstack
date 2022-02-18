@@ -5,9 +5,12 @@ import {
   enable as enableDarkMode,
   disable as disableDarkMode,
 } from "darkreader";
+import { useSelector } from "react-redux";
+import { getCurrentUserData } from "../../store/users";
 
 const NavProfile = () => {
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
+  const currentUser = useSelector(getCurrentUserData());
   const [isOpen, setOpen] = useState(false);
   const toggleMenu = () => {
     setOpen((prevState) => !prevState);

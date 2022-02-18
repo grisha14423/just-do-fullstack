@@ -3,6 +3,8 @@ import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 import noteService from "../services/note.service";
 import { useAuth } from "./useAuth";
+import { useSelector } from "react-redux";
+import { getCurrentUserData } from "../store/users";
 
 const NoteContext = React.createContext();
 
@@ -14,7 +16,8 @@ export const NoteProvider = ({ children }) => {
   const [notes, setNotes] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const { currentUser } = useAuth();
+  // const { currentUser } = useAuth();
+  const currentUser = useSelector(getCurrentUserData());
 
   useEffect(() => {
     if (error !== null) {
@@ -58,9 +61,10 @@ export const NoteProvider = ({ children }) => {
   async function addNote(data) {
     const note = {
       ...data,
-      _id: nanoid(),
+      // _id: nanoid(),
       userId: currentUser._id,
     };
+    console.log(note);
     try {
       const { content } = await noteService.createNote(note);
       setNotes((prevState) => [...prevState, content]);

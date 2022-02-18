@@ -7,13 +7,13 @@ const ImportanceList = ({ importance }) => {
 
   const { getImportance } = useImportance();
   const importanceList = getImportance(importance);
-  // console.log(importanceList);
+  // console.log(importance);
 
   if (isLoading) return "Loadind ...";
   return (
     <>
-      {importanceList.map((qual) => (
-        <Importance key={qual._id} {...qual} />
+      {importanceList.map((imp) => (
+        <Importance key={imp._id} {...imp} />
       ))}
     </>
   );
