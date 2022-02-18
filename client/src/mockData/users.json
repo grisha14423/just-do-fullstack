@@ -1,0 +1,42 @@
+[
+  {
+    "_id": "67rdca3eeb7f6fgeed471818",
+    "name": "Рэйчел Грин",
+    "email": "user@example.com",
+    "notes": [
+      "67rdca3eeb7f6fgdaasd",
+      "67rdca3eeb7f6fgdaame",
+      "67rdca3eeb7f6fgdaars"
+    ]
+  },
+  {
+    "_id": "67rdca3eeb7f6fgeed471819",
+    "name": "Шелдон Купер",
+    "email": "user1@example.com",
+    "notes": [
+      "67rdca3eeb7f6fgdaasd",
+      "67rdca3eeb7f6fgdaame",
+      "67rdca3eeb7f6fgdaars"
+    ]
+  },
+  {
+    "_id": "67rdca3eeb7f6fgeed471820",
+    "name": "Леонард Хофстедтер",
+    "email": "user2@example.com",
+    "notes": [
+      "67rdca3eeb7f6fgdaasd",
+      "67rdca3eeb7f6fgdaame",
+      "67rdca3eeb7f6fgdaars"
+    ]
+  },
+  {
+    "_id": "67rdca3eeb7f6fgeed471821",
+    "name": "Говард Воловиц",
+    "email": "user3@example.com",
+    "notes": [
+      "67rdca3eeb7f6fgdaasd",
+      "67rdca3eeb7f6fgdaame",
+      "67rdca3eeb7f6fgdaars"
+    ]
+  }
+]

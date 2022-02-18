@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "67rdca3eeb7f6fgeed471198",
+    "name": "Не важно",
+    "color": "secondary"
+  },
+  {
+    "_id": "67rdca3eeb7f6fgeed471100",
+    "name": "Важно",
+    "color": "success"
+  },
+  {
+    "_id": "67rdca3eeb7f6fgeed4711012",
+    "name": "Очень важно",
+    "color": "danger"
+  }
+]
