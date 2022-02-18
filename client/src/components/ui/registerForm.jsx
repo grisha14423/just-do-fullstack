@@ -4,12 +4,12 @@ import CheckBoxField from "../common/form/checkBoxField";
 import { useAuth } from "../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
-// import { useDispatch } from "react-redux";
-// import { signUp } from "../../store/users";
+import { useDispatch } from "react-redux";
+import { signUp } from "../../store/users";
 
 const RegisterForm = () => {
-  const { signUp } = useAuth();
-  // const dispatch = useDispatch();
+  // const { signUp } = useAuth();
+  const dispatch = useDispatch();
 
   const history = useHistory();
   const [data, setData] = useState({
@@ -67,10 +67,10 @@ const RegisterForm = () => {
     const newData = {
       ...data,
     };
-    // console.log(newData);
-    // dispatch(signUp(newData));
-    signUp(newData);
-    history.push("/");
+    console.log(newData);
+    dispatch(signUp(newData));
+    // signUp(newData);
+    // history.push("/");
   };
 
   return (

@@ -123,7 +123,6 @@ export const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     if (error !== null) {
-      console.log(error);
       setError(null);
     }
   }, [error]);

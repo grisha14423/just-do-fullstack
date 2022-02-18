@@ -97,9 +97,9 @@ export const login =
       dispatch(authRequestSuccess({ userId: data.userId }));
       history.push(redirect);
     } catch (error) {
-      const { code, message } = error.response.data.error;
-      if (code === 400) {
-        const errorMessage = generetaAuthError(message);
+      const { status, statusText } = error.response;
+      if (status === 400) {
+        const errorMessage = generetaAuthError(statusText);
         dispatch(authRequestFailed(errorMessage));
       } else {
         dispatch(authRequestFailed(error.message));

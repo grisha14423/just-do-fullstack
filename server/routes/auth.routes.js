@@ -71,9 +71,13 @@ router.post("/signInWithPassword", [
         });
       }
 
+      // console.log(req.body);
+
       const { email, password } = req.body;
 
-      const existingUser = await User.findOne({ email });
+      console.log(email, password);
+
+      const existingUser = await User.findOne(email);
 
       if (!existingUser) {
         return res.status(400).send({
