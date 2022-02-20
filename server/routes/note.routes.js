@@ -58,18 +58,19 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.delete("/:noteId", auth, async (req, res) => {
+router.delete("/:noteId", async (req, res) => {
   try {
     const { noteId } = req.params;
     const removedNote = await Note.findById(noteId);
 
-    if (removedNote.userId.toString() === req.user._id) {
+    if (removedNote) {
       removedNote.remove();
       return res.send(null);
     } else {
       return res.status(400).json({ message: "Unauthorized" });
     }
   } catch (e) {
+    console.log(e);
     res.status(500).json({
       message: "Ошибка на сервере, попробуйте позже",
     });

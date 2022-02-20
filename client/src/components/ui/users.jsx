@@ -11,7 +11,12 @@ const Users = () => {
           return (
             <div className="col-md-3" key={user._id}>
               <div className="d-flex flex-column align-items-center text-center position-relative">
-                <img src={user.image} className="rounded-circle" width="150" />
+                <img
+                  src={user.image}
+                  className="rounded-circle"
+                  width="150"
+                  alt=""
+                />
                 <div className="mt-3">
                   <h4>{user.name}</h4>
                 </div>

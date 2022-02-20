@@ -62,8 +62,5 @@ const getById = (id) =>
       );
     }, 1000);
   });
-
-export default {
-  fetchAll,
-  getById,
-};
+export default fetchAll;
+export { getById };

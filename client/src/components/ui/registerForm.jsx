@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
@@ -11,7 +11,7 @@ const RegisterForm = () => {
   // const { signUp } = useAuth();
   const dispatch = useDispatch();
 
-  const history = useHistory();
+  // const history = useHistory();
   const [data, setData] = useState({
     name: "",
     email: "",
@@ -103,7 +103,7 @@ const RegisterForm = () => {
         name="licence"
         error={errors.licence}
       >
-        Подтвердить <a>лицензионное соглашение</a>
+        Подтвердить <a href="#">лицензионное соглашение</a>
       </CheckBoxField>
       <button
         type="submit"

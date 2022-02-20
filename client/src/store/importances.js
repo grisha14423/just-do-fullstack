@@ -39,4 +39,10 @@ export const loadimportancesList = () => async (dispatch) => {
 
 export const getImportances = () => (state) => state.importances.entities;
 
+export const getImprtanceById = (imp) => (state) => {
+  if (state.importances.entities) {
+    return state.importances.entities.find((i) => i._id === imp);
+  }
+};
+
 export default importancesReducer;

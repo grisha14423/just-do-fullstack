@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 import { useNote } from "../../hooks/useNote";
 import AddNoteForm from "../ui/addNoteForm";
 import ImportanceList from "../ui/importanceList";

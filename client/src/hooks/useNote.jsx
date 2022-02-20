@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
-import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 import noteService from "../services/note.service";
-import { useAuth } from "./useAuth";
+// import { useAuth } from "./useAuth";
 import { useSelector } from "react-redux";
 import { getCurrentUserData } from "../store/users";
 
@@ -47,7 +46,7 @@ export const NoteProvider = ({ children }) => {
   async function deleteNote(id) {
     try {
       const { content } = await noteService.removeNote(id);
-      if (content === null) {
+      if (!content) {
         setNotes((prevState) => prevState.filter((c) => c._id !== id));
       }
     } catch (error) {

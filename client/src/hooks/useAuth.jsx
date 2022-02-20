@@ -55,6 +55,7 @@ export const AuthProvider = ({ children }) => {
         switch (message) {
           case "INVALID_PASSWORD":
             setError("Email или пароль введены некорректно");
+            break;
 
           default:
             setError("Слишком много попыток входа. Попробуйте позднее");
@@ -98,17 +99,18 @@ export const AuthProvider = ({ children }) => {
     }
   }
 
-  async function createUser(data) {
-    try {
-      const { content } = await userService.create(data);
-      //   console.log(content);
-      setUser(content);
-    } catch (error) {
-      errorCatcher(error);
-    }
-  }
+  // async function createUser(data) {
+  //   try {
+  //     const { content } = await userService.create(data);
+  //     //   console.log(content);
+  //     setUser(content);
+  //   } catch (error) {
+  //     errorCatcher(error);
+  //   }
+  // }
 
   function errorCatcher(error) {
+    console.log(error);
     const { message } = error.response;
     setError(message);
   }

@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import TextField from "../common/form/textField";
 import CheckBoxField from "../common/form/checkBoxField";
-import { useAuth } from "../../hooks/useAuth";
+// import { useAuth } from "../../hooks/useAuth";
 import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { useDispatch, useSelector } from "react-redux";
 import { getAuthErrors, login } from "../../store/users";
 
 const LoginForm = () => {
-  const { logIn } = useAuth();
+  // const { logIn } = useAuth();
   const dispatch = useDispatch();
   const loginError = useSelector(getAuthErrors());
   const history = useHistory();

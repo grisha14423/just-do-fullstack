@@ -12,7 +12,6 @@ const initialState = localStorageService.getAccessToken()
       error: null,
       auth: { userId: localStorageService.getUserId() },
       isLoggedIn: true,
-      dataLoaded: false,
     }
   : {
       entities: null,
@@ -20,7 +19,6 @@ const initialState = localStorageService.getAccessToken()
       error: null,
       auth: null,
       isLoggedIn: false,
-      dataLoaded: false,
     };
 
 const usersSlice = createSlice({
@@ -32,7 +30,7 @@ const usersSlice = createSlice({
     },
     usersReceved: (state, action) => {
       state.entities = action.payload;
-      state.dataLoaded = true;
+
       state.isLoading = false;
     },
     usersRequestFiled: (state, action) => {
@@ -53,7 +51,6 @@ const usersSlice = createSlice({
       state.entities = null;
       state.isLoggedIn = false;
       state.auth = null;
-      state.dataLoaded = false;
     },
     authRequested: (state) => {
       state.error = null;
@@ -162,5 +159,6 @@ export const getCurrentUserData = () => (state) => {
 };
 export const getUsersList = () => (state) => state.users.entities;
 export const getAuthErrors = () => (state) => state.users.error;
+export const getUsersLoadingStatus = () => (state) => state.users.isLoading;
 
 export default usersReducer;

@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
 import { toast } from "react-toastify";
-import API from "../api";
 import importanceService from "../services/importance.service";
 
 const ImportanceContext = React.createContext();

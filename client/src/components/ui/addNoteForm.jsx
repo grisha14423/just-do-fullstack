@@ -15,7 +15,7 @@ const AddNoteForm = () => {
   const [data, setData] = useState({
     title: "",
     content: "",
-    importance: "620f6e2069fa09774d732e52",
+    importance: "62123a6ff6a249140185aaa3",
   });
 
   const importanceList = importances.map((p) => ({
@@ -39,7 +39,7 @@ const AddNoteForm = () => {
     setData({
       title: "",
       content: "",
-      importance: "",
+      importance: "62123a6ff6a249140185aaa3",
     });
 
     addNote(newData);

@@ -25,7 +25,12 @@ const Login = () => {
               <RegisterForm />
               <p className="text-center">
                 Уже есть аккаунт?{" "}
-                <a role="button" onClick={toggleFormType} className="text">
+                <a
+                  role="button"
+                  onClick={toggleFormType}
+                  className="text"
+                  href="#"
+                >
                   {" "}
                   <b>Войти</b>
                 </a>
@@ -37,7 +42,12 @@ const Login = () => {
               <LoginForm />
               <p className="text-center">
                 Нет аккаунта?{" "}
-                <a role="button" onClick={toggleFormType} className="text">
+                <a
+                  role="button"
+                  onClick={toggleFormType}
+                  className="text"
+                  href="#"
+                >
                   {" "}
                   <b>Зарегистрироваться</b>
                 </a>

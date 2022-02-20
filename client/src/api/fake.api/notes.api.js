@@ -1,21 +1,3 @@
-// const importances = {
-//   unimportant: {
-//     _id: "67rdca3eeb7f6fgeed471198",
-//     name: "Не важно",
-//     color: "secondary",
-//   },
-//   important: {
-//     _id: "67rdca3eeb7f6fgeed471100",
-//     name: "Важно",
-//     color: "success",
-//   },
-//   topmost: {
-//     _id: "67rdca3eeb7f6fgeed4711012",
-//     name: "Очень важно",
-//     color: "danger",
-//   },
-// };
-
 const notes = [
   {
     _id: "67rdca3eeb7f6fg",
@@ -123,10 +105,5 @@ const update = (id, data) =>
     resolve(notes[noteIndex]);
   });
 
-export default {
-  fetchAll,
-  add,
-  remove,
-  getById,
-  update,
-};
+export default fetchAll;
+export { add, remove, getById, update };
