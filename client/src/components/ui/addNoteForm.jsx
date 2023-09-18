@@ -15,7 +15,7 @@ const AddNoteForm = () => {
   const [data, setData] = useState({
     title: "",
     content: "",
-    importance: "62123a6ff6a249140185aaa3",
+    importance: "",
   });
 
   const importanceList = importances.map((p) => ({
@@ -39,10 +39,14 @@ const AddNoteForm = () => {
     setData({
       title: "",
       content: "",
-      importance: "62123a6ff6a249140185aaa3",
+      importance: "",
     });
 
     addNote(newData);
+  };
+
+  const isValid = () => {
+    if (data.title && data.content && data.importance) return true;
   };
 
   return (
@@ -71,7 +75,11 @@ const AddNoteForm = () => {
               value={data.importance}
             />
             <div className="text-center">
-              <button type="submit" className="btn btn-primary w-50 mx-auto">
+              <button
+                type="submit"
+                className="btn btn-primary w-50 mx-auto"
+                disabled={isValid}
+              >
                 Добавить
               </button>
             </div>
